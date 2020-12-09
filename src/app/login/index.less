@@ -1,0 +1,89 @@
+.login-layout {
+	width: 100vw;
+	height: 100vh;
+	background: url("./../../images/login/b1.jpg") center center no-repeat;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.login-content {
+	width: 900px;
+	height: 500px;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+	padding-top: 50px;
+	margin-top: -100px;
+	.login-top {
+		margin-bottom: 20px;
+		.login-top-title {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 10px;
+			.login-logo {
+				width: 100px;
+				height: 40px;
+				color: #fff;
+				text-align: center;
+				line-height: 40px;
+				border-radius: 6px;
+				background-color: #660099;
+				margin-right: 20px;
+			}
+			h2 {
+				color: #fff;
+				font-size: 30px;
+				line-height: 40px;
+			}
+		}
+		.login-top-desc {
+			font-size: 14px;
+			color: #eeeeee;
+		}
+	}
+	.login-bottom {
+		padding: 0 40px;
+		height: 320px;
+		display: flex;
+		.login-bottom-image {
+			flex: 3;
+			border-radius: 10px 0 0 10px;
+			overflow: hidden;
+			background-color: #eeeeee;
+			background: url("../../images/login/b1.jpg") center center no-repeat;
+			background-size: cover;
+		}
+		.login-bottom-text {
+			flex: 2;
+			border-radius: 0 10px 10px 0;
+			overflow: hidden;
+			background-color: #eeeeee;
+			padding: 30px 20px 0;
+			.login-in-h2 {
+				font-size: 24px;
+				color: #660099;
+				margin-bottom: 10px;
+			}
+			.login-input {
+				margin-bottom: 20px;
+				.login-prefix-style {
+					padding-right: 10px;
+				}
+			}
+			.login-forget-password {
+				font-size: 14px;
+				margin-bottom: 10px;
+				display: flex;
+				justify-content: space-between;
+				.login-forget {
+					cursor: pointer;
+				}
+			}
+			.login-forget-btn {
+				margin-right: 20px;
+			}
+		}
+	}
+}

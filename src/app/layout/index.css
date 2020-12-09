@@ -1,0 +1,22 @@
+.trigger {
+	font-size: 22px;
+	line-height: 64px;
+	padding: 0 24px;
+	cursor: pointer;
+	transition: color 0.3s;
+}
+.trigger:hover {
+	color: #ff7c00;
+}
+.logo {
+	height: 32px;
+	background: rgba(255, 255, 255, 0.3);
+	margin: 16px;
+}
+
+.site-layout .site-layout-content {
+	background-color: #fff;
+	margin: 24px 16px;
+	min-height: 480px;
+	flex: none;
+}
