@@ -50,9 +50,13 @@ class AXIOS {
 			...opt,
 		};
 		return new Promise((resolve, reject) => {
+			const newUrl =
+				url.indexOf("http:") > -1
+					? url
+					: `${this.genDomainForEnv(option.urlType)}${url}`;
 			return this.HTTP(
 				AXIOS.METHOD.GET,
-				`${this.genDomainForEnv(option.urlType)}${url}`,
+				newUrl,
 				data,
 				"json",
 				option.key,
@@ -78,11 +82,14 @@ class AXIOS {
 			mask: false,
 			...opt,
 		};
-
 		return new Promise((resolve, reject) => {
+			const newUrl =
+				url.indexOf("http:") > -1
+					? url
+					: `${this.genDomainForEnv(option.urlType)}${url}`;
 			return this.HTTP(
 				AXIOS.METHOD.POST,
-				`${this.genDomainForEnv(option.urlType)}${url}`,
+				newUrl,
 				data,
 				option.type,
 				option.key,
@@ -274,7 +281,7 @@ class AXIOS {
 				case "json":
 					contentType = "application/json";
 					_forEach(data, (val, key) => {
-						if (val === "" || val === undefined) {
+						if (val === undefined) {
 							delete data[key];
 						}
 					});
@@ -379,9 +386,4 @@ class AXIOS {
 }
 
 const AXIOSSERVER = new AXIOS();
-// export const GET =  AXIOSSERVER.GET;
-// export const POST =  AXIOSSERVER.POST;
-// export const CANCEL =  AXIOSSERVER.CANCEL;
-// export const OPENDATAURL =  AXIOSSERVER.OPENDATAURL;
-// export const OPENURLGET =  AXIOSSERVER.OPENURLGET;
 export const { GET, POST, CANCEL, OPENDATAURL, OPENURLGET } = AXIOSSERVER;

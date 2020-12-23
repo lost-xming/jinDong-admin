@@ -1,6 +1,14 @@
 import Home from "@/app/home";
 import PageA from "@/app/pageA";
 import PageB from "@/app/pageB";
+import PageC from "@/app/pageC";
+import PageD from "@/app/pageD";
+import PageE from "@/app/pageE";
+import PageF from "@/app/pageF";
+// import PageG from "@/app/pageG";
+import PageH from "@/app/pageH";
+import PageI from "@/app/pageI";
+import PageJ from "@/app/pageJ";
 import NotFound from "@/app/404";
 import Login from "@/app/login";
 export const appRouters = [
@@ -8,71 +16,100 @@ export const appRouters = [
 		exact: true,
 		path: "/",
 		iconType: "BankOutlined",
-		title: "Home",
 		hasNotShow: true,
 		component: Home,
 	},
 	{
-		path: "/home",
-		title: "Home",
+		path: "/upload",
+		title: "图片上传",
 		iconType: "BankOutlined",
-		component: Home,
+		component: PageH,
+	},
+	{
+		path: "/news",
+		title: "新闻中心",
+		iconType: "BankOutlined",
 		children: [
 			{
-				path: "/home/detail",
-				title: "detail",
+				path: "/news/list",
+				title: "新闻列表",
 				iconType: "BookOutlined",
-				redirect: "/home/detail/pageA",
-				children: [
-					{
-						path: "/home/detail/pageA",
-						title: "PageA",
-						iconType: "ContainerOutlined",
-						component: PageA,
-					},
-					{
-						path: "/home/detail/pageB",
-						title: "PageB",
-						// authority: ["user", "admin"],
-						iconType: "ContainerOutlined",
-						component: PageB,
-					},
-				],
+				component: PageI,
 			},
 			{
-				path: "/home/err",
-				title: "NotFound",
+				path: "/news/detail/:id",
+				title: "新闻详情",
 				hasNotShow: true,
-				iconType: "VideoCameraOutlined",
-				component: NotFound,
+				iconType: "BookOutlined",
+				component: PageJ,
 			},
 		],
 	},
 	{
-		path: "/detail",
-		title: "home2",
-		// authority: ["user", "admin"],
+		path: "/www",
+		title: "PC站管理",
+		iconType: "BankOutlined",
+		children: [
+			{
+				path: "/www/header",
+				title: "公共页头管理",
+				iconType: "BookOutlined",
+				component: PageA,
+			},
+			{
+				path: "/www/footer",
+				title: "公共页脚管理",
+				iconType: "BookOutlined",
+				component: PageB,
+			},
+			{
+				path: "/www/detail",
+				title: "首页管理",
+				iconType: "BookOutlined",
+				component: PageC,
+			},
+			{
+				path: "/www/product",
+				title: "产品中心页管理",
+				iconType: "BookOutlined",
+				component: PageD,
+			},
+			{
+				path: "/www/introduction",
+				title: "了解锦东页管理",
+				iconType: "BookOutlined",
+				component: PageE,
+			},
+			{
+				path: "/www/info",
+				title: "公司简介页管理",
+				iconType: "BookOutlined",
+				component: PageF,
+			},
+			// {
+			// 	path: "/www/news",
+			// 	title: "新闻中心页管理",
+			// 	iconType: "BookOutlined",
+			// 	component: PageG,
+			// },
+		],
+	},
+	{
+		path: "/m",
+		title: "M站管理",
 		iconType: "CarryOutOutlined",
 		children: [
 			{
-				path: "/detail/detail",
-				title: "detail2",
+				path: "/m/home",
+				title: "首页管理",
 				iconType: "BookOutlined",
-				redirect: "/detail/detail/pageA",
-				children: [
-					{
-						path: "/detail/detail/pageA",
-						title: "PageA",
-						iconType: "ContainerOutlined",
-						component: PageA,
-					},
-					{
-						path: "/detail/detail/pageB",
-						title: "PageB",
-						iconType: "ContainerOutlined",
-						component: PageB,
-					},
-				],
+				component: PageA,
+			},
+			{
+				path: "/m/news",
+				title: "新闻页管理",
+				iconType: "BookOutlined",
+				component: PageB,
 			},
 		],
 	},

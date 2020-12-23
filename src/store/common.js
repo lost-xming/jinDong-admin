@@ -1,3 +1,5 @@
+import CommonService from "./CommonService";
+const CommonServices = new CommonService();
 export default {
 	state: {
 		userInfo: {},

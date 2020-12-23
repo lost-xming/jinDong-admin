@@ -1,27 +1,26 @@
 const CONFIG = {
 	development: {
-		targetUrl: "https://pmerchant-dev.bthome.com",
-		apiUrl: "http://framework.bnq.com.cn:8018",
-		apiUrlFilter: "/merchantPcApi",
-		proxyFilter: "/merchantPcApi",
-		imUrl: "https:///pt-dev.bthome.com/appApi/apis",
-		port: 8018,
+		targetUrl: "http://sever.jddianqi.cn",
+		apiUrl: "http://sever.jddianqi.cn",
+		apiUrlFilter: "/adminApi",
+		proxyFilter: "/adminApi",
+		imUrl: "https://jd-buc-img.oss-cn-shenzhen.aliyuncs.com",
 		autoOpenBrowser: true,
 	},
 	prodDev: {
-		apiUrl: "https://pmerchant-dev.bthome.com",
-		apiUrlFilter: "/merchantPcApi",
-		imUrl: "https:///pt-dev.bthome.com/appApi/apis",
+		apiUrl: "http://sever.jddianqi.cn",
+		apiUrlFilter: "/adminApi",
+		imUrl: "https://jd-buc-img.oss-cn-shenzhen.aliyuncs.com",
 	},
 	test: {
-		apiUrl: "https://pmerchant-test.bthome.com",
-		apiUrlFilter: "/merchantPcApi",
+		apiUrl: "http://sever.jddianqi.cn",
+		apiUrlFilter: "/adminApi",
 		imUrl: "https:///pt-test.bthome.com/appApi/apis",
 	},
 	production: {
-		apiUrl: "https://pmerchant.bthome.com",
-		apiUrlFilter: "/merchantPcApi",
-		imUrl: "https:///pt.bthome.com/appApi/apis",
+		apiUrl: "http://sever.jddianqi.cn",
+		apiUrlFilter: "/adminApi",
+		imUrl: "https:///pt-test.bthome.com/appApi/apis",
 	},
 };
 export default CONFIG;
