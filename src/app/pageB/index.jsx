@@ -178,6 +178,10 @@ class PageB extends React.Component {
 															className="footer-inp"
 															placeholder="请输入"
 														/>
+														<div className="tip-txet">
+															例如：http://www.jddianqi.cn/home 时，只需设置
+															‘/home’即可
+														</div>
 													</div>
 													<div className="pageb-item pageb-item-btn-box">
 														{ind === item.arr.length - 1 ? (
