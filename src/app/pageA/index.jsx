@@ -51,7 +51,7 @@ class PageA extends React.Component {
 		};
 	}
 	componentDidMount() {
-		// this.initData();
+		this.initData();
 	}
 	initData = async () => {
 		const data = await this.props.getData();
@@ -174,9 +174,9 @@ class PageA extends React.Component {
 	};
 	render() {
 		const { tabList, initData } = this.state;
-		// if (!initData.indexName) {
-		// 	return null;
-		// }
+		if (!initData.indexName) {
+			return null;
+		}
 		return (
 			<div className="content-box">
 				<div className="tip-header">
