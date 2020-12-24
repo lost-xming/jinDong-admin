@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import Proptypes from "prop-types";
-import { Form, Input, Button, Card, Upload, message } from "antd";
+import { Form, Input, Button, Card, Upload, message, Modal, Image } from "antd";
 import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
 import "./index.less";
 function getBase64(img, callback) {
@@ -159,13 +159,32 @@ class PageA extends React.Component {
 			</div>
 		);
 	};
+	_renderModal = () => {
+		Modal.info({
+			title: "案例图片",
+			content: (
+				<div>
+					<Image
+						width={200}
+						src="https://jd-buc-img.oss-cn-shenzhen.aliyuncs.com/header.png "
+					/>
+				</div>
+			),
+		});
+	};
 	render() {
 		const { tabList, initData } = this.state;
-		if (!initData.indexName) {
-			return null;
-		}
+		// if (!initData.indexName) {
+		// 	return null;
+		// }
 		return (
 			<div className="content-box">
+				<div className="tip-header">
+					<span className="tip-txet">建议：3-5个模块，每个模块3-5条</span>
+					<Button type="link" onClick={this._renderModal}>
+						案例图片
+					</Button>
+				</div>
 				<Form
 					{...layout}
 					name="basic"
