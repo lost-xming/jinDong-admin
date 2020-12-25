@@ -198,9 +198,9 @@ class PageF extends React.Component {
 													<span className="red">{linkurl}1</span>
 													【1】为新闻id，新闻id 从新闻列表详情页查看
 												</div>
-												<div>
+												<div className="pagef-new-id">
 													<Image
-														width={400}
+														width={200}
 														src={
 															"https://jd-buc-img.oss-cn-shenzhen.aliyuncs.com/newFindid.png"
 														}
