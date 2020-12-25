@@ -1,7 +1,7 @@
 import Service from "./Service";
 export default {
 	state: {
-		tabList: [],
+		tabList: [[]],
 	},
 	reducers: {
 		setStateData(state, data) {

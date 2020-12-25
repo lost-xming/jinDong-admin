@@ -30,12 +30,27 @@ class PageE extends React.Component {
 		const { getData } = this.props;
 		const data = await getData();
 		const { list } = data;
-		this.props.setTabListData({ tabList: list });
+		if (list.length) {
+			this.props.setTabListData({ tabList: list });
+		}
 	};
 	onSaveAction = () => {
 		const { updateData, tabList } = this.props;
+		const newData = [];
+		tabList.map((item) => {
+			if (item.length) {
+				const lastItem = item[item.length - 1];
+				if (
+					lastItem.url ||
+					(lastItem.response && lastItem.response.data.imageUrl)
+				) {
+					newData.push([lastItem]);
+				}
+			}
+			return null;
+		});
 		updateData({
-			list: tabList,
+			list: newData,
 		}).then((data) => {
 			if (data) {
 				message.success("提交成功");
@@ -45,14 +60,7 @@ class PageE extends React.Component {
 
 	onAddCardAction = () => {
 		const newTabList = [...this.props.tabList];
-		newTabList.push([
-			{
-				uid: "-100",
-				name: ``,
-				status: "done",
-				url: "",
-			},
-		]);
+		newTabList.push([]);
 		this.props.setTabListData({ tabList: newTabList });
 	};
 	onRemoveCardAction = (index) => {
