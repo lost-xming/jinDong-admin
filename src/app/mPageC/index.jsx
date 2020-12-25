@@ -71,7 +71,9 @@ class MPageC extends React.Component {
 				const lastItem = item[item.length - 1];
 				if (
 					lastItem.url ||
-					(lastItem.response && lastItem.response.data.imageUrl)
+					(lastItem.response &&
+						lastItem.response.data &&
+						lastItem.response.data.imageUrl)
 				) {
 					newData.push([lastItem]);
 				}
