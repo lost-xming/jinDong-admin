@@ -11,6 +11,7 @@ const layout = {
 	wrapperCol: { span: 16 },
 };
 const redText = "<br  />";
+const linkurl = "/newsInfo/";
 class PageF extends React.Component {
 	static propTypes = {
 		info: Proptypes.string,
@@ -140,7 +141,7 @@ class PageF extends React.Component {
 										>
 											<Card
 												hoverable
-												style={{ width: 150 }}
+												style={{ width: 200 }}
 												cover={<img alt="example" src={item.url} />}
 											>
 												<Meta title={item.title} description={item.desc} />
@@ -182,7 +183,7 @@ class PageF extends React.Component {
 												</div>
 												<div className="pagef-card-item-right-line">
 													<div className="pagef-card-item-right-line-title">
-														文章链接：
+														链接：
 													</div>
 													<Input
 														value={item.link}
@@ -191,6 +192,19 @@ class PageF extends React.Component {
 														}
 														className="footer-inp"
 													/>
+												</div>
+												<div className="pagef-tip-txet">
+													链接为固定方式：
+													<span className="red">{linkurl}1</span>
+													【1】为新闻id，新闻id 从新闻列表详情页查看
+												</div>
+												<div>
+													<Image
+														width={400}
+														src={
+															"https://jd-buc-img.oss-cn-shenzhen.aliyuncs.com/newFindid.png"
+														}
+													></Image>
 												</div>
 												<div className="pagef-card-item-right-line pagef-card-item-right-btn">
 													{index === tabList.length - 1 ? (
