@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, Menu } from "antd";
+import { Layout, Menu, Image, Space } from "antd";
 import * as Icon from "@ant-design/icons";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
@@ -83,7 +83,14 @@ class SiderCom extends React.Component {
 				collapsible
 				collapsed={collapsed}
 			>
-				<div className="logo" />
+				<div className="sider-logo">
+					<Image
+						width={30}
+						className="sider-logo-img"
+						src={require("../../images/login/logo.png").default}
+					/>
+					{!collapsed && <span>锦东电器</span>}
+				</div>
 				<Menu
 					theme="dark"
 					mode="inline"

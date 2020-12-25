@@ -8,10 +8,20 @@
 .trigger:hover {
 	color: #ff7c00;
 }
-.logo {
-	height: 32px;
-	background: rgba(255, 255, 255, 0.3);
+.sider-logo {
+	height: 40px;
+	font-weight: 600;
+	letter-spacing: 4px;
+	border-radius: 6px;
+	color: #000000;
+	background: #eeeeee;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	margin: 16px;
+}
+.sider-logo-img {
+	margin-right: 10px;
 }
 
 .site-layout .site-layout-content {
