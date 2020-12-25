@@ -1,17 +1,7 @@
 import Service from "./Service";
 export default {
 	state: {
-		tabList: [
-			{
-				title: "",
-				arr: [
-					{
-						url: "",
-						name: "",
-					},
-				],
-			},
-		],
+		tabList: [],
 	},
 	reducers: {
 		setStateData(state, data) {

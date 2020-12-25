@@ -101,6 +101,9 @@ class PageB extends React.Component {
 	};
 	render() {
 		const { tabList } = this.props;
+		if (!tabList.length) {
+			return null;
+		}
 		return (
 			<div className="content-box">
 				<div className="tip-header">
