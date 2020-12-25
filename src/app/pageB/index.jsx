@@ -145,7 +145,7 @@ class PageB extends React.Component {
 										className="footer-inp"
 										maxLength={6}
 										placeholder="请输入"
-										value={item.title}
+										defaultValue={item.title}
 										onChange={(e) => {
 											this.onTitleInputChange(index, e);
 										}}
@@ -164,7 +164,7 @@ class PageB extends React.Component {
 															}}
 															className="footer-inp"
 															maxLength={10}
-															value={it.name}
+															defaultValue={it.name}
 															placeholder="请输入"
 														/>
 													</div>
@@ -174,7 +174,7 @@ class PageB extends React.Component {
 															onChange={(e) => {
 																this.onInputChange(index, ind, "url", e);
 															}}
-															value={it.url}
+															defaultValue={it.url}
 															className="footer-inp"
 															placeholder="请输入"
 														/>
