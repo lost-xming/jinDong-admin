@@ -81,7 +81,7 @@ const mapState = (state = {}) => {
 };
 const mapDispatch = (dispatch) => {
 	return {
-		setForgetPasswordAction: dispatch.Login.setForgetPasswordAction,
+		setForgetPasswordAction: dispatch.login.setForgetPasswordAction,
 	};
 };
 export default connect(mapState, mapDispatch)(ForgetPassword);

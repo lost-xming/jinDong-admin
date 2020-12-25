@@ -41,7 +41,7 @@ class LoginCom extends React.Component {
 
 const mapState = (state = {}) => {
 	return {
-		forgetPassword: state.Login.forgetPassword,
+		forgetPassword: state.login.forgetPassword,
 	};
 };
 const mapDispatch = (dispatch) => {

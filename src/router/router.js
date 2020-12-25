@@ -5,12 +5,16 @@ import PageC from "@/app/pageC";
 import PageD from "@/app/pageD";
 import PageE from "@/app/pageE";
 import PageF from "@/app/pageF";
-// import PageG from "@/app/pageG";
 import PageH from "@/app/pageH";
 import PageI from "@/app/pageI";
 import PageJ from "@/app/pageJ";
 import NotFound from "@/app/404";
 import Login from "@/app/login";
+import MPageA from "@/app/mPageA";
+import MPageB from "@/app/mPageB";
+import MPageC from "@/app/mPageC";
+import MPageD from "@/app/mPageD";
+import MPageE from "@/app/mPageE";
 export const appRouters = [
 	{
 		exact: true,
@@ -86,12 +90,6 @@ export const appRouters = [
 				iconType: "BookOutlined",
 				component: PageF,
 			},
-			// {
-			// 	path: "/www/news",
-			// 	title: "新闻中心页管理",
-			// 	iconType: "BookOutlined",
-			// 	component: PageG,
-			// },
 		],
 	},
 	{
@@ -100,16 +98,34 @@ export const appRouters = [
 		iconType: "CarryOutOutlined",
 		children: [
 			{
-				path: "/m/home",
-				title: "首页管理",
+				path: "/m/header",
+				title: "公共页头管理",
 				iconType: "BookOutlined",
-				component: PageA,
+				component: MPageA,
 			},
 			{
-				path: "/m/news",
-				title: "新闻页管理",
+				path: "/m/footer",
+				title: "公共页脚管理",
 				iconType: "BookOutlined",
-				component: PageB,
+				component: MPageB,
+			},
+			{
+				path: "/m/index",
+				title: "首页管理",
+				iconType: "BookOutlined",
+				component: MPageC,
+			},
+			{
+				path: "/m/product",
+				title: "产品中心页管理",
+				iconType: "BookOutlined",
+				component: MPageD,
+			},
+			{
+				path: "/m/introduction",
+				title: "了解锦东页管理",
+				iconType: "BookOutlined",
+				component: MPageE,
 			},
 		],
 	},
