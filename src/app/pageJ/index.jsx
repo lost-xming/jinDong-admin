@@ -10,6 +10,7 @@ const layout = {
 	labelCol: { span: 4 },
 	wrapperCol: { span: 16 },
 };
+const redText = "<br  />";
 class PageJ extends React.Component {
 	static propTypes = {
 		addData: Proptypes.func,
@@ -154,6 +155,11 @@ class PageJ extends React.Component {
 										onChange={(e) => this.setCardInput(e, "info")}
 										placeholder="请输入"
 									/>
+								</div>
+								<div className="pagej-tip-txet">
+									文本如果需要换行，请使用
+									<span className="red">{redText}</span>
+									进行换行
 								</div>
 								<div className="pageJ-card-item-right-line">
 									<div className="pageJ-card-item-right-line-title" />

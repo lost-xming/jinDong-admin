@@ -10,6 +10,7 @@ const layout = {
 	labelCol: { span: 4 },
 	wrapperCol: { span: 16 },
 };
+const redText = "<br  />";
 class PageF extends React.Component {
 	static propTypes = {
 		info: Proptypes.string,
@@ -124,6 +125,10 @@ class PageF extends React.Component {
 								autoSize={{ minRows: 10, maxRows: 20 }}
 								placeholder="请输入"
 							/>
+							<div className="tip-txet">
+								文本如果需要换行，请使用<span className="red">{redText}</span>
+								进行换行
+							</div>
 						</Form.Item>
 						<Form.Item label="新闻推荐" name="tuijian">
 							<div className="pagef-cards">
