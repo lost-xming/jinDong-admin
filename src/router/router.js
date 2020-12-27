@@ -15,6 +15,7 @@ import MPageB from "@/app/mPageB";
 import MPageC from "@/app/mPageC";
 import MPageD from "@/app/mPageD";
 import MPageE from "@/app/mPageE";
+import MPageF from "@/app/mPageF";
 export const appRouters = [
 	{
 		exact: true,
@@ -126,6 +127,12 @@ export const appRouters = [
 				title: "了解锦东页管理",
 				iconType: "BookOutlined",
 				component: MPageE,
+			},
+			{
+				path: "/m/info",
+				title: "公司简介页管理",
+				iconType: "BookOutlined",
+				component: MPageF,
 			},
 		],
 	},

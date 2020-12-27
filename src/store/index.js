@@ -16,6 +16,7 @@ import mPageB from "@/app/mPageB/store";
 import mPageC from "@/app/mPageC/store";
 import mPageD from "@/app/mPageD/store";
 import mPageE from "@/app/mPageE/store";
+import mPageF from "@/app/mPageF/store";
 import loginCom from "@/components/login/store";
 const store = init({
 	models: {
@@ -36,6 +37,7 @@ const store = init({
 		mPageC,
 		mPageD,
 		mPageE,
+		mPageF,
 		loginCom,
 	},
 });
