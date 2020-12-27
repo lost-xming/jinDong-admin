@@ -38,11 +38,12 @@ class PageF extends React.Component {
 		const { getData } = this.props;
 		const data = await getData();
 		const { news, info } = data;
-		this.props.setTabListData({ info, tabList: news });
+		this.props.setTabListData({ info: info || "", tabList: news || [] });
 	};
 
 	onFinish = (values) => {
 		const { updateData, tabList } = this.props;
+		console.log(123, tabList);
 		updateData({
 			info: values.info,
 			news: tabList,
@@ -152,7 +153,7 @@ class PageF extends React.Component {
 														图片：
 													</div>
 													<Input
-														value={item.url}
+														defaultValue={item.url}
 														onChange={(e) => this.setCardInput(e, index, "url")}
 														className="footer-inp"
 													/>
@@ -162,7 +163,7 @@ class PageF extends React.Component {
 														标题：
 													</div>
 													<Input
-														value={item.title}
+														defaultValue={item.title}
 														onChange={(e) =>
 															this.setCardInput(e, index, "title")
 														}
@@ -174,7 +175,7 @@ class PageF extends React.Component {
 														介绍：
 													</div>
 													<Input
-														value={item.desc}
+														defaultValue={item.desc}
 														onChange={(e) =>
 															this.setCardInput(e, index, "desc")
 														}
@@ -186,7 +187,7 @@ class PageF extends React.Component {
 														链接：
 													</div>
 													<Input
-														value={item.link}
+														defaultValue={item.link}
 														onChange={(e) =>
 															this.setCardInput(e, index, "link")
 														}
