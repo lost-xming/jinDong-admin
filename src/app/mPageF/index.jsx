@@ -245,15 +245,15 @@ class PageF extends React.Component {
 
 const mapDispatch = (dispatch) => {
 	return {
-		setTabListData: dispatch.pageF.setTabListData,
-		updateData: dispatch.pageF.updateData,
-		getData: dispatch.pageF.getData,
+		setTabListData: dispatch.mPageF.setTabListData,
+		updateData: dispatch.mPageF.updateData,
+		getData: dispatch.mPageF.getData,
 	};
 };
 const mapState = (state) => {
 	return {
-		info: state.pageF.info,
-		tabList: state.pageF.tabList,
+		info: state.mPageF.info,
+		tabList: state.mPageF.tabList,
 	};
 };
 export default connect(mapState, mapDispatch)(PageF);
