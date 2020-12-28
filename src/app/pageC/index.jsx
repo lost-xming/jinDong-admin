@@ -94,7 +94,7 @@ class PageC extends React.Component {
 		const props = {
 			name: "avatar",
 			action: `${apiUrl}/uploadOss`,
-			headers: { timeout: 600 * 1000 },
+			headers: { timeout: 6000 * 1000 },
 		};
 		return (
 			<div className="content-box">
