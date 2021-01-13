@@ -149,7 +149,7 @@ class PageA extends React.Component {
 						}}
 					>
 						{item.url ? (
-							<img src={item.url} alt="avatar" style={{ width: "100%" }} />
+							<img src={item.url.url} alt="avatar" style={{ width: "100%" }} />
 						) : (
 							uploadButton
 						)}

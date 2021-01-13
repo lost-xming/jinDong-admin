@@ -38,7 +38,7 @@ class PageD extends React.Component {
 		const { updateData, tabList } = this.props;
 		const newData = [];
 		tabList.map((item) => {
-			if (item.length) {
+			if (item.length === 1) {
 				const lastItem = item[item.length - 1];
 				if (
 					lastItem.url ||
@@ -47,6 +47,12 @@ class PageD extends React.Component {
 						lastItem.response.data.imageUrl)
 				) {
 					newData.push([lastItem]);
+				}
+			} else if (item.length > 1) {
+				if (item[item.length - 2].type === item[item.length - 1].type) {
+					newData.push([item[item.length - 2], item[item.length - 1]]);
+				} else {
+					newData.push([item[item.length - 1]]);
 				}
 			}
 			return null;
@@ -148,7 +154,7 @@ class PageD extends React.Component {
 											单击或拖动文件到此区域以上载(图片/视频)
 										</p>
 										<p className="ant-upload-text">
-											每个模块仅展示最后上传的一条，多传无效
+											默认展示最后一条，当最后两条上传内容都为图片时，展示两张图片(横排平铺方式)
 										</p>
 									</Dragger>
 								</div>
