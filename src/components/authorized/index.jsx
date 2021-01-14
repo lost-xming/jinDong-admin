@@ -7,7 +7,7 @@ const Authorized = (props) => {
 		JSON.parse(localStorage.getItem("userInfo"))
 	);
 	const { currentAuthority } = userInfoData;
-	if (!currentAuthority) return login;
+	// if (!currentAuthority) return login;
 	if (!authority) return children;
 	const _authority = Array.isArray(authority) ? authority : [authority];
 	if (_authority.includes(currentAuthority)) return children;

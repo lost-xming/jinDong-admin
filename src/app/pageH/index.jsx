@@ -32,7 +32,7 @@ class PageH extends React.Component {
 	handleChange = ({ fileList, file }) => {
 		const newArr = [...this.props.list];
 		if (file.status === "done") {
-			newArr.unshift(file.response.data.imageUrl);
+			newArr.unshift(file.response.data.imageUrl.url);
 			this.props.setListData({ list: newArr });
 		}
 		this.setState({ fileList });
@@ -62,10 +62,8 @@ class PageH extends React.Component {
 						<p className="ant-upload-text">
 							单击或拖动文件到此区域以上载(图片/视频)
 						</p>
-						<p className="ant-upload-text">
-							每个模块仅展示最后上传的一条，多传无效
-						</p>
 					</Dragger>
+					<h1 style={{ paddingTop: 10, paddingBottom: 10 }}>图片或视频链接</h1>
 					<List
 						dataSource={list}
 						renderItem={(item, index) => (
