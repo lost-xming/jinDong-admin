@@ -141,9 +141,9 @@ class AXIOS {
 							switch (code) {
 								case -1:
 									msg = "账号未登录";
-									// // 清除 storage
-									// localStorage.setItem("userInfo", JSON.stringify({}));
-									// window.location.href = "/login";
+									// 清除 storage
+									localStorage.setItem("userInfo", JSON.stringify({}));
+									window.location.href = "/login";
 									break;
 							}
 							reject({

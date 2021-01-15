@@ -16,5 +16,9 @@ export default {
 			// state， 可获取组件state 值
 			this.setUserInfo(params);
 		},
+		async loginOut() {
+			// state， 可获取组件state 值
+			localStorage.setItem("userInfo", JSON.stringify({}));
+		},
 	}),
 };

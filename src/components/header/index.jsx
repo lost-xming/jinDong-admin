@@ -1,6 +1,7 @@
 import React from "react";
 import { Layout, Dropdown, Menu } from "antd";
 import PropTypes from "prop-types";
+import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import {
 	MenuUnfoldOutlined,
@@ -14,11 +15,11 @@ const { Header } = Layout;
 class HeaderCom extends React.Component {
 	static propTypes = {
 		collapsed: PropTypes.bool,
-		setUserInfoAction: PropTypes.func,
+		loginOut: PropTypes.func,
 	};
 	static defaultProps = {
 		collapsed: false,
-		setUserInfoAction: () => {},
+		loginOut: () => {},
 	};
 	toggle = () => {
 		const { setCollapsed, collapsed } = this.props;
@@ -38,8 +39,9 @@ class HeaderCom extends React.Component {
 		console.log(1234);
 	};
 	onLoginOut = () => {
-		const { setUserInfoAction } = this.props;
-		setUserInfoAction({});
+		const { loginOut, history } = this.props;
+		loginOut();
+		history.push("/login");
 	};
 	renderTip = () => {
 		return (
@@ -95,7 +97,7 @@ const mapState = (state = {}) => {
 const mapDispatch = (dispatch) => {
 	return {
 		setCollapsed: dispatch.SiderStore.setCollapsedAction,
-		setUserInfoAction: dispatch.Common.setUserInfoAction,
+		loginOut: dispatch.Common.loginOut,
 	};
 };
-export default connect(mapState, mapDispatch)(HeaderCom);
+export default connect(mapState, mapDispatch)(withRouter(HeaderCom));
