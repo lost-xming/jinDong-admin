@@ -114,7 +114,7 @@ class PageH extends React.Component {
 						rowKey={(record, index) => `table_${index}`}
 						pagination={{
 							current: pageNum,
-							pageSize: 2,
+							pageSize: 10,
 							total,
 							showTotal: (totalNum) => <span>共{totalNum}条</span>,
 							onChange: this.onPageChange,
