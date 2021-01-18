@@ -1,7 +1,17 @@
 import React from "react";
 import { connect } from "react-redux";
 import Proptypes from "prop-types";
-import { Form, Input, Button, Modal, Image, Upload, List, Avatar } from "antd";
+import {
+	Form,
+	Input,
+	Button,
+	Modal,
+	Image,
+	Upload,
+	List,
+	Avatar,
+	Table,
+} from "antd";
 import { InboxOutlined } from "@ant-design/icons";
 import { GET } from "../../axios/index";
 import "./index.less";
@@ -14,31 +24,65 @@ class PageH extends React.Component {
 	static propTypes = {
 		list: Proptypes.array,
 		setListData: Proptypes.func,
+		getData: Proptypes.func,
 	};
 	static defaultProps = {
 		list: [],
 		setListData: () => {},
+		getData: () => {},
 	};
 	constructor(props) {
 		super(props);
 		this.state = {
 			fileList: [],
+			pageNum: 1,
+			total: 0,
+			pageSize: 10,
+			tableColumns: [
+				{
+					title: "图片",
+					dataIndex: "src",
+					render: (text, record) => {
+						return <Image src={text} width={50} />;
+					},
+				},
+				{
+					title: "url",
+					dataIndex: "src",
+				},
+			],
 		};
 	}
 	componentDidMount() {
-		this.initData();
+		this.initData(1);
 	}
-	initData = async () => {};
+	initData = async (page) => {
+		const { total, pageNum } = await this.props.getData({ pageNum: page });
+		this.setState({
+			pageNum,
+			total,
+		});
+	};
+	onPageChange = (page) => {
+		this.setState(
+			{
+				pageNum: page,
+			},
+			() => {
+				this.initData(page);
+			}
+		);
+	};
 	handleChange = ({ fileList, file }) => {
 		const newArr = [...this.props.list];
 		if (file.status === "done") {
-			newArr.unshift(file.response.data.imageUrl.url);
+			newArr.unshift({ src: file.response.data.imageUrl.url });
 			this.props.setListData({ list: newArr });
 		}
 		this.setState({ fileList });
 	};
 	render() {
-		const { fileList } = this.state;
+		const { fileList, tableColumns, pageNum, total } = this.state;
 		const { list } = this.props;
 		const props = {
 			name: "avatar",
@@ -64,25 +108,18 @@ class PageH extends React.Component {
 						</p>
 					</Dragger>
 					<h1 style={{ paddingTop: 10, paddingBottom: 10 }}>图片或视频链接</h1>
-					<List
+					<Table
+						columns={tableColumns}
 						dataSource={list}
-						renderItem={(item, index) => (
-							<List.Item key={`list-${index}`}>
-								<div className="list-item">
-									<div className="list-item-img">
-										<Avatar src={item} />
-									</div>
-									{item}
-								</div>
-							</List.Item>
-						)}
-					>
-						{this.state.loading && this.state.hasMore && (
-							<div className="demo-loading-container">
-								<Spin />
-							</div>
-						)}
-					</List>
+						rowKey={(record, index) => `table_${index}`}
+						pagination={{
+							current: pageNum,
+							pageSize: 2,
+							total,
+							showTotal: (totalNum) => <span>共{totalNum}条</span>,
+							onChange: this.onPageChange,
+						}}
+					/>
 				</div>
 			</div>
 		);
@@ -92,6 +129,7 @@ class PageH extends React.Component {
 const mapDispatch = (dispatch) => {
 	return {
 		setListData: dispatch.pageH.setListData,
+		getData: dispatch.pageH.getData,
 	};
 };
 const mapState = (state) => {
