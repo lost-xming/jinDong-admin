@@ -43,7 +43,8 @@ class PageH extends React.Component {
 					title: "图片",
 					dataIndex: "src",
 					render: (text, record) => {
-						return <Image src={text} width={50} />;
+						const isImg = /\.(png|jpg|gif|jpeg|webp)$/.test(text);
+						return isImg ? <Image src={text} width={50} /> : "视频资源";
 					},
 				},
 				{
